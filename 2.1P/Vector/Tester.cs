@@ -46,6 +46,8 @@ namespace Vector
         // Returns positive  -> another comes first
         public int CompareTo(Student another)
         {
+            if (another == null)
+                return 1;
             return this.Id - another.Id;
         }
     }
@@ -57,6 +59,12 @@ namespace Vector
     {
         public int Compare(Student a, Student b)
         {
+            if (a == null && b == null)
+                return 0;
+            if (a == null)
+                return -1;
+            if (b == null)
+                return 1;
             return a.Id - b.Id;
         }
     }
@@ -69,6 +77,12 @@ namespace Vector
     {
         public int Compare(Student a, Student b)
         {
+            if (a == null && b == null)
+                return 0;
+            if (a == null)
+                return -1;
+            if (b == null)
+                return 1;
             int nameComparison = string.Compare(b.Name, a.Name, StringComparison.Ordinal);
             if (nameComparison != 0)
                 return nameComparison;
