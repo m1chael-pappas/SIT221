@@ -80,9 +80,9 @@ namespace Vector
             if (a == null && b == null)
                 return 0;
             if (a == null)
-                return -1;
+                return 1; // was -1 — null sorts LAST in a descending comparer
             if (b == null)
-                return 1;
+                return -1; // was +1 — null sorts LAST in a descending comparer
             int nameComparison = string.Compare(b.Name, a.Name, StringComparison.Ordinal);
             if (nameComparison != 0)
                 return nameComparison;
