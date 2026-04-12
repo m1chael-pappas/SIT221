@@ -380,10 +380,14 @@ namespace DoubleLinkedList
             // test 12: RemoveFirst on empty list
             try
             {
-                Console.WriteLine("\nTest L: Remove first element for the empty list with list.RemoveFirst()");
+                Console.WriteLine(
+                    "\nTest L: Remove first element for the empty list with list.RemoveFirst()"
+                );
                 list.RemoveFirst();
                 Console.WriteLine(" :: FAIL: list's state " + list.ToString());
-                Console.WriteLine("Last operation is invalid and must throw InvalidOperationException. Your solution does not match specification.");
+                Console.WriteLine(
+                    "Last operation is invalid and must throw InvalidOperationException. Your solution does not match specification."
+                );
                 result = result + "-";
             }
             catch (InvalidOperationException)
@@ -394,19 +398,29 @@ namespace DoubleLinkedList
             catch (Exception)
             {
                 Console.WriteLine(" :: FAIL: list's state " + list.ToString());
-                Console.WriteLine("Last operation is invalid and must throw InvalidOperationException. Your solution does not match specification.");
+                Console.WriteLine(
+                    "Last operation is invalid and must throw InvalidOperationException. Your solution does not match specification."
+                );
                 result = result + "-";
             }
 
             // test 13: AddFirst to empty list then verify single element
             try
             {
-                Console.WriteLine("\nTest M: AddFirst to an empty list, then verify First and Last point to the same node");
+                Console.WriteLine(
+                    "\nTest M: AddFirst to an empty list, then verify First and Last point to the same node"
+                );
                 list.AddFirst(99);
-                if (list.Count != 1) throw new Exception("Count should be 1");
-                if (list.First == null || list.Last == null) throw new Exception("First and Last should not be null");
-                if (list.First != list.Last) throw new Exception("First and Last should be the same node for a single-element list");
-                if (list.First.Value != 99) throw new Exception("Value should be 99");
+                if (list.Count != 1)
+                    throw new Exception("Count should be 1");
+                if (list.First == null || list.Last == null)
+                    throw new Exception("First and Last should not be null");
+                if (list.First != list.Last)
+                    throw new Exception(
+                        "First and Last should be the same node for a single-element list"
+                    );
+                if (list.First.Value != 99)
+                    throw new Exception("Value should be 99");
                 Console.WriteLine(" :: SUCCESS: list's state " + list.ToString());
                 result = result + "M";
             }
@@ -421,8 +435,10 @@ namespace DoubleLinkedList
             try
             {
                 Console.WriteLine("\nTest N: Before(First) returns null, After(Last) returns null");
-                if (list.Before(list.First) != null) throw new Exception("Before(First) should return null");
-                if (list.After(list.Last) != null) throw new Exception("After(Last) should return null");
+                if (list.Before(list.First) != null)
+                    throw new Exception("Before(First) should return null");
+                if (list.After(list.Last) != null)
+                    throw new Exception("After(Last) should return null");
                 Console.WriteLine(" :: SUCCESS: list's state " + list.ToString());
                 result = result + "N";
             }
@@ -438,9 +454,12 @@ namespace DoubleLinkedList
             {
                 Console.WriteLine("\nTest O: Remove the only element, then verify list is empty");
                 list.Remove(list.First);
-                if (list.Count != 0) throw new Exception("Count should be 0");
-                if (list.First != null) throw new Exception("First should be null");
-                if (list.Last != null) throw new Exception("Last should be null");
+                if (list.Count != 0)
+                    throw new Exception("Count should be 0");
+                if (list.First != null)
+                    throw new Exception("First should be null");
+                if (list.Last != null)
+                    throw new Exception("Last should be null");
                 Console.WriteLine(" :: SUCCESS: list's state " + list.ToString());
                 result = result + "O";
             }
@@ -454,7 +473,9 @@ namespace DoubleLinkedList
             // test 16: AddBefore with null node throws exception
             try
             {
-                Console.WriteLine("\nTest P: AddBefore with null node throws NullReferenceException");
+                Console.WriteLine(
+                    "\nTest P: AddBefore with null node throws NullReferenceException"
+                );
                 list.AddBefore(null, 10);
                 Console.WriteLine(" :: FAIL: Expected NullReferenceException");
                 result = result + "-";
@@ -473,7 +494,9 @@ namespace DoubleLinkedList
             // test 17: AddAfter with null node throws exception
             try
             {
-                Console.WriteLine("\nTest Q: AddAfter with null node throws NullReferenceException");
+                Console.WriteLine(
+                    "\nTest Q: AddAfter with null node throws NullReferenceException"
+                );
                 list.AddAfter(null, 10);
                 Console.WriteLine(" :: FAIL: Expected NullReferenceException");
                 result = result + "-";
@@ -513,7 +536,8 @@ namespace DoubleLinkedList
             {
                 Console.WriteLine("\nTest S: Clear on an already empty list does not throw");
                 list.Clear();
-                if (list.Count != 0) throw new Exception("Count should be 0");
+                if (list.Count != 0)
+                    throw new Exception("Count should be 0");
                 Console.WriteLine(" :: SUCCESS: list's state " + list.ToString());
                 result = result + "S";
             }
@@ -528,12 +552,18 @@ namespace DoubleLinkedList
             try
             {
                 Console.WriteLine("\nTest T: Build list, clear, then rebuild");
-                list.AddLast(1); list.AddLast(2); list.AddLast(3);
+                list.AddLast(1);
+                list.AddLast(2);
+                list.AddLast(3);
                 list.Clear();
-                list.AddFirst(10); list.AddLast(20);
-                if (!CheckIntSequence(new int[] { 10, 20 }, list)) throw new Exception("The list stores incorrect sequence of integers");
-                if (list.First.Value != 10) throw new Exception("First should be 10");
-                if (list.Last.Value != 20) throw new Exception("Last should be 20");
+                list.AddFirst(10);
+                list.AddLast(20);
+                if (!CheckIntSequence(new int[] { 10, 20 }, list))
+                    throw new Exception("The list stores incorrect sequence of integers");
+                if (list.First.Value != 10)
+                    throw new Exception("First should be 10");
+                if (list.Last.Value != 20)
+                    throw new Exception("Last should be 20");
                 Console.WriteLine(" :: SUCCESS: list's state " + list.ToString());
                 result = result + "T";
                 list.Clear();
