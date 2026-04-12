@@ -121,7 +121,7 @@ namespace Vector
         // Falls back to Comparer<T>.Default if comparer is null.
         public void Sort(IComparer<T> comparer)
         {
-            ArgumentNullException.ThrowIfNull(comparer);
+            comparer ??= Comparer<T>.Default;
             Array.Sort(data, 0, Count, comparer);
         }
 
