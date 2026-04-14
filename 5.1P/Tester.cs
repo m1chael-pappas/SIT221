@@ -474,15 +474,15 @@ namespace DoubleLinkedList
             try
             {
                 Console.WriteLine(
-                    "\nTest P: AddBefore with null node throws NullReferenceException"
+                    "\nTest P: AddBefore with null node throws ArgumentNullException"
                 );
                 list.AddBefore(null, 10);
-                Console.WriteLine(" :: FAIL: Expected NullReferenceException");
+                Console.WriteLine(" :: FAIL: Expected ArgumentNullException");
                 result = result + "-";
             }
-            catch (NullReferenceException)
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(" :: SUCCESS: NullReferenceException thrown as expected");
+                Console.WriteLine(" :: SUCCESS: ArgumentNullException thrown as expected");
                 result = result + "P";
             }
             catch (Exception)
@@ -495,15 +495,15 @@ namespace DoubleLinkedList
             try
             {
                 Console.WriteLine(
-                    "\nTest Q: AddAfter with null node throws NullReferenceException"
+                    "\nTest Q: AddAfter with null node throws ArgumentNullException"
                 );
                 list.AddAfter(null, 10);
-                Console.WriteLine(" :: FAIL: Expected NullReferenceException");
+                Console.WriteLine(" :: FAIL: Expected ArgumentNullException");
                 result = result + "-";
             }
-            catch (NullReferenceException)
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(" :: SUCCESS: NullReferenceException thrown as expected");
+                Console.WriteLine(" :: SUCCESS: ArgumentNullException thrown as expected");
                 result = result + "Q";
             }
             catch (Exception)
@@ -515,14 +515,14 @@ namespace DoubleLinkedList
             // test 18: Remove with null node throws exception
             try
             {
-                Console.WriteLine("\nTest R: Remove with null node throws NullReferenceException");
+                Console.WriteLine("\nTest R: Remove with null node throws ArgumentNullException");
                 list.Remove(null);
-                Console.WriteLine(" :: FAIL: Expected NullReferenceException");
+                Console.WriteLine(" :: FAIL: Expected ArgumentNullException");
                 result = result + "-";
             }
-            catch (NullReferenceException)
+            catch (ArgumentNullException)
             {
-                Console.WriteLine(" :: SUCCESS: NullReferenceException thrown as expected");
+                Console.WriteLine(" :: SUCCESS: ArgumentNullException thrown as expected");
                 result = result + "R";
             }
             catch (Exception)
